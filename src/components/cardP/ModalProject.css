@@ -1,0 +1,514 @@
+/* ===== FONDO ===== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(10px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    padding:20px;
+
+    animation:fadeIn .35s ease;
+}
+
+
+
+/* ===== MODAL ===== */
+
+.modal-project {
+
+    width:85%;
+    max-width:1300px;
+
+    height:75vh;
+    max-height:900px;
+
+    background:#111;
+
+    border:1px solid #2c2c2c;
+    border-radius:18px;
+
+    display:flex;
+
+    overflow:hidden;
+
+    position:relative;
+
+    animation:modalOpen .4s ease;
+
+}
+
+
+
+/* ===== BOTON CERRAR ===== */
+
+.close-btn{
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#1d1d1d;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:.3s;
+}
+
+
+.close-btn:hover{
+
+    background:#ff4747;
+
+    transform:rotate(90deg);
+
+}
+
+
+
+/* ===== IZQUIERDA ===== */
+
+.modal-left{
+
+    width:35%;
+
+    padding:50px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.modal-left h2{
+
+    color:white;
+
+    font-size:38px;
+
+    margin-bottom:25px;
+
+}
+
+
+.modal-left p{
+
+    color:#a8a8a8;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.modal-left h4{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* ===== TECNOLOGIAS ===== */
+
+
+.tech-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+
+
+.tech-list span{
+
+    padding:10px 18px;
+
+    background:#1e1e1e;
+
+    border:1px solid #333;
+
+    border-radius:50px;
+
+    color:#cfcfcf;
+
+    transition:.3s;
+
+}
+
+
+
+.tech-list span:hover{
+
+    background:#2d2d2d;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* ===== DERECHA ===== */
+
+.modal-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+/* ===== IMAGEN ===== */
+
+
+.slider-image{
+
+    width:90%;
+
+    max-height:85%;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    transition:.35s;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
+
+
+
+/* ===== FLECHAS ===== */
+
+
+.arrow{
+
+    position:absolute;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.arrow:hover{
+
+    background:white;
+
+    color:black;
+
+    transform:scale(1.1);
+
+}
+
+
+.left{
+    left:20px;
+}
+
+
+.right{
+    right:20px;
+}
+
+
+
+/* ===== DOTS ===== */
+
+
+.dots{
+
+    position:absolute;
+
+    bottom:25px;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#5d5d5d;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.dot.active{
+
+    width:30px;
+
+    border-radius:50px;
+
+    background:white;
+
+}
+
+
+
+/* ===== TABLET ===== */
+
+
+@media(max-width:900px){
+
+
+    .modal-project{
+
+        width:95%;
+
+        height:90vh;
+
+        flex-direction:column;
+
+        overflow-y:auto;
+
+    }
+
+
+    .modal-left{
+
+        width:auto;
+
+        padding:30px;
+
+    }
+
+
+    .modal-left h2{
+
+        font-size:30px;
+
+    }
+
+
+    .modal-right{
+
+        min-height:350px;
+
+    }
+
+
+    .slider-image{
+
+        width:85%;
+
+        max-height:75%;
+
+    }
+
+}
+
+
+
+/* ===== CELULAR ===== */
+
+
+@media(max-width:600px){
+
+
+    .modal-overlay{
+
+        padding:10px;
+
+    }
+
+
+    .modal-project{
+
+        width:100%;
+
+        height:95vh;
+
+        border-radius:12px;
+
+    }
+
+
+
+    .modal-left{
+
+        padding:25px;
+
+    }
+
+
+    .modal-left h2{
+
+        font-size:25px;
+
+        margin-bottom:15px;
+
+    }
+
+
+    .modal-left p{
+
+        font-size:14px;
+
+        line-height:1.5;
+
+        margin-bottom:20px;
+
+    }
+
+
+    .tech-list span{
+
+        padding:8px 14px;
+
+        font-size:13px;
+
+    }
+
+
+
+    .modal-right{
+
+        min-height:280px;
+
+    }
+
+
+    .slider-image{
+
+        width:90%;
+
+    }
+
+
+
+    .arrow{
+
+        width:38px;
+
+        height:38px;
+
+        font-size:20px;
+
+    }
+
+
+    .left{
+        left:10px;
+    }
+
+
+    .right{
+        right:10px;
+    }
+
+
+    .dots{
+
+        bottom:15px;
+
+    }
+
+}
+
+
+
+
+/* ===== ANIMACIONES ===== */
+
+
+@keyframes modalOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.75) translateY(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) translateY(0);
+
+    }
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
