@@ -7,24 +7,44 @@ export default function ModalProject({
   title,
   description,
   images,
+  technologies,
 }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
+      const scrollY = window.scrollY;
+
       document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      const scrollY = Math.abs(parseInt(document.body.style.top || "0"));
+
       document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.width = "";
+      document.body.style.overflow = "";
+
+      window.scrollTo(0, scrollY);
     }
 
     return () => {
-      document.body.style.overflow = "";
+      const scrollY = Math.abs(parseInt(document.body.style.top || "0"));
+
       document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.width = "";
+      document.body.style.overflow = "";
+
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
@@ -53,10 +73,9 @@ export default function ModalProject({
           <h4>Tecnologías</h4>
 
           <div className="tech-list">
-            <span>React</span>
-            <span>C#</span>
-            <span>SQL Server</span>
-            <span>CSS</span>
+            {technologies?.map((tech, index) => (
+              <span key={index}>{tech}</span>
+            ))}
           </div>
         </div>
 

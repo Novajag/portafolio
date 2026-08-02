@@ -96,9 +96,9 @@ export default function Home() {
     <>
       <div className="background-overlay"></div>
 
-      <Nav />
-
       <main className="home">
+        <Nav />
+
         <section
           className="section-home"
           style={{ paddingTop: "80px" }}
