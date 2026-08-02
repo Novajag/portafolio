@@ -18,6 +18,19 @@ import mantenimiento from "../../assets/icon/mantenimiento.png";
 import alucar1 from "../../assets/project/alucar1.png";
 import alucar2 from "../../assets/project/alucar2.png";
 
+import uniap1 from "../../assets/uniapp/unip1.jpg";
+import uniap2 from "../../assets/uniapp/unip2.jpg";
+import uniap3 from "../../assets/uniapp/unip3.jpg";
+import uniap4 from "../../assets/uniapp/unip4.jpg";
+import uniap5 from "../../assets/uniapp/unip5.jpg";
+import uniap6 from "../../assets/uniapp/unip6.jpg";
+import uniap7 from "../../assets/uniapp/unip7.jpg";
+import uniap8 from "../../assets/uniapp/unip8.jpg";
+import uniap9 from "../../assets/uniapp/unip9.jpg";
+import uniap10 from "../../assets/uniapp/unip10.jpg";
+import uniap11 from "../../assets/uniapp/unip11.jpg";
+import uniap12 from "../../assets/uniapp/unip12.jpg";
+
 import html5 from "../../assets/HTML5.png";
 import css3 from "../../assets/CSS3.png";
 import javaScript from "../../assets/JavaScript.png";
@@ -40,6 +53,16 @@ import tlf from "../../assets/icon/tlf.png";
 import location from "../../assets/icon/location.png";
 import linkedin from "../../assets/icon/linkedin.png";
 export default function Home() {
+  const irASeccion = (id) => {
+    const seccion = document.getElementById(id);
+
+    if (seccion) {
+      seccion.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scroll = window.scrollY;
@@ -94,8 +117,16 @@ export default function Home() {
                 centralizadas en sus necesidades.
               </h3>
 
-              <Button text="Ver Proyectos ➜" type="btn-1 button-home" />
-              <Button text="Hablemos" type="btn-2 button-home" />
+              <Button
+                text="Ver Proyectos ➜"
+                type="btn-1 button-home"
+                onClick={() => irASeccion("projects")}
+              />
+              <Button
+                text="Hablemos"
+                type="btn-2 button-home"
+                onClick={() => irASeccion("projects")}
+              />
             </div>
 
             <div className="div-container-home-2">
@@ -175,13 +206,32 @@ export default function Home() {
                 title="Alucar"
                 description="Sistema completo de alquiler de vehículos."
                 images={[alucar1, alucar2]}
-                technologies={["React", "C#", "SQL Server", "CSS"]}
+                technologies={[
+                  "Bootsrap5",
+                  "CSS3",
+                  "SQL Server",
+                  "Html5",
+                  "PHP",
+                ]}
               />
               <CardP
-                title="Alucar"
-                description="Sistema completo de alquiler de vehículos."
-                images={[alucar1, alucar2]}
-                technologies={["React", "C#", "SQL Server", "CSS"]}
+                title="Uniapp"
+                description="Sistema de gestión integral de servicios digitales."
+                images={[
+                  uniap12,
+                  uniap1,
+                  uniap2,
+                  uniap3,
+                  uniap4,
+                  uniap5,
+                  uniap6,
+                  uniap7,
+                  uniap8,
+                  uniap9,
+                  uniap10,
+                  uniap11,
+                ]}
+                technologies={["React", "java", "JDBC", "CSS"]}
               />
             </div>
           </div>
